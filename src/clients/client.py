@@ -1,14 +1,11 @@
-import json
 import socket
-from typing import Tuple, List, Optional
-
+from typing import Tuple
 import config
-from src.my_exception import DisconnectedException
 
 
 class Client:
-    def __init__(self, host: str = config.HOST,
-                 port: int = config.PORT,
+    def __init__(self, host: str,
+                 port: int,
                  ):
         self.socket: socket.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.__address = (host, port)

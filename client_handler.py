@@ -6,8 +6,10 @@ from src.rcp_client import RcpClient
 
 
 def client_handler():
-    host = input('What is the host? Leave it blank for default: ') or config.HOST
-    port = input('What is the port? Leave it blank for default: ') or config.PORT
+    # host = input('What is the host? Leave it blank for default: ') or config.HOST
+    # port = input('What is the port? Leave it blank for default: ') or (config.PORT + 1)
+    host = config.HOST
+    port = (config.PORT)
 
     client = ClientClient(host, port)
     RcpClient(client=client).run()

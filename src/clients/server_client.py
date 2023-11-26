@@ -21,7 +21,7 @@ class ServerClient(Client):
         socket_.sendall(json.dumps(payload).encode())
 
     @staticmethod
-    def receive_to_worker(worker_socket: socket.socket) -> List[list, dict]:
+    def receive_to_worker(worker_socket: socket.socket) -> list:
         res = json.loads(worker_socket.recv(config.MSG_SIZE).decode())
         if not res:
             raise DisconnectedException
